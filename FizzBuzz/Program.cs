@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-using FizzBuzzClass;
+using FizzBuzz;
 
 namespace FizzBuzz
 {
@@ -9,11 +9,11 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            //FizzBuzzClass.FizzBuzzClass.FizzBuzz(1, 100);
-            using (FileStream fs = new FileStream(@"c:\test\fizzbuzz.txt", FileMode.OpenOrCreate))
+            using (OutputFileStream os = new OutputFileStream(@"c:\test\fizzbuzz.txt", FileMode.OpenOrCreate))
             {
-                FizzBuzzClass.FizzBuzzClass.FizzBuzz(1, 10000, fs);
+                FizzBuzzClass.FizzBuzzMethod(1, 10000, os);
             }
+            Console.WriteLine("Finished.");
             Console.ReadLine();
         }
 
